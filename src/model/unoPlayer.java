@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uno;
+package model;
 
+import model.unoCard;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -16,13 +18,12 @@ public class unoPlayer {
 
     private String name;
     private String id;
-
     private List<unoCard> handCards;
 
     public unoPlayer(String name, String id) {
         this.name = name;
         this.id = id;
-        this.handCards = new ArrayList<unoCard>();
+        this.handCards = new LinkedList<unoCard>();
     }
 
     public unoPlayer(String name, List<unoCard> handCards) {

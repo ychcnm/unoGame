@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uno;
+package model;
+
+import enums.CardColor;
+import enums.Type;
 
 /**
  *
@@ -11,32 +14,32 @@ package uno;
  */
 public class unoCard {
 
-    private String color;
-    private String type;
+    private CardColor color;
+    private Type type;
     private int value;
     private String image;
 
-    public unoCard(String color, String type, int value, String image) {
+    public unoCard(CardColor color, Type type, int value, String image) {
         this.color = color;
         this.type = type;
         this.value = value;
         this.image = image;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
+    }
+
+    public CardColor getColor() {
+        return color;
+    }
+
+    public void setColor(CardColor color) {
+        this.color = color;
     }
 
     public int getValue() {
@@ -59,6 +62,4 @@ public class unoCard {
     public String toString() {
         return "color=" + color + ", type=" + type + ", value=" + value + ", image=" + image;
     }
-
-    
 }

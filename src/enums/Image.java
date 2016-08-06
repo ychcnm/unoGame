@@ -3,29 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uno;
+package enums;
 
 /**
  *
  * @author Mitch
  */
-public class Value {
+public class Image {
 
-    public static final String RED = "Red";
-    public static final String YELLOW = "Yellow";
-    public static final String GREEN = "Green";
-    public static final String BLUE = "bule";
-    public static final String WILD = "wild";
-
-    public static final String NORMAL = "Normal";
-    public static final String SKIP = "Skip";
-    public static final String REVERSE = "Reverse";
-    public static final String DRAW_2 = "Draw Two";
-    public static final String DRAW_4 = "Draw Four";
-
-    public static final String GAME_STARTED = "Started";
-    public static final String GAME_WAITING = "Waiting";
-    public static final String GAME_ENDED = "Ended";
 
     /*Red Card*/
     public static final String RED_0 = "c0_00.png";

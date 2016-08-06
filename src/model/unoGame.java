@@ -3,10 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uno;
+package model;
 
+import enums.Status;
+import model.unoPlayer;
+import model.unoDeck;
+import model.unoCard;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-
 
 /**
  *
@@ -16,16 +21,20 @@ public class unoGame {
 
     private String id;
     private List<unoPlayer> gamePlayers;
-    private String gameStatus;
+    private Status gameStatus;
     private unoDeck gameDeck;
     private unoCard dicardPile;
 
-    public unoGame(String id, List<unoPlayer> gamePlayers, String gameStatus, unoDeck gameDeck, unoCard dicardPile) {
+    public unoGame() {
+         this.gameDeck = new unoDeck();
+    }
+
+    public unoGame(String id, Status gameStatus) {
         this.id = id;
-        this.gamePlayers = gamePlayers;
+        this.gamePlayers = new LinkedList<unoPlayer>();
         this.gameStatus = gameStatus;
-        this.gameDeck = gameDeck;
-        this.dicardPile = dicardPile;
+        this.gameDeck = new unoDeck();
+        this.dicardPile = this.gameDeck.takeCard();
     }
 
     public void addPlayer(unoPlayer player) {
@@ -46,7 +55,7 @@ public class unoGame {
         return card;
     }
 
-    public void changeStatus(String status) {
+    public void changeStatus(Status status) {
         this.gameStatus = status;
     }
 
@@ -66,11 +75,11 @@ public class unoGame {
         this.gamePlayers = gamePlayers;
     }
 
-    public String getGameStatus() {
+    public Status getGameStatus() {
         return gameStatus;
     }
 
-    public void setGameStatus(String gameStatus) {
+    public void setGameStatus(Status gameStatus) {
         this.gameStatus = gameStatus;
     }
 
@@ -90,5 +99,4 @@ public class unoGame {
         this.dicardPile = dicardPile;
     }
 
-    
 }
