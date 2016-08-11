@@ -75,4 +75,6 @@ public class Image {
     /*Function Card*/
     public static final String WILDCARD = "c4_00.png";
     public static final String DRWAFOUR = "c4_01.png";
+    
+     public static final String BACK = "back.png";
 }

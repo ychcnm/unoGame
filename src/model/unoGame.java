@@ -6,12 +6,11 @@
 package model;
 
 import enums.Status;
-import model.unoPlayer;
-import model.unoDeck;
-import model.unoCard;
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
+import javax.json.Json;
+import javax.json.JsonObject;
 
 /**
  *
@@ -20,21 +19,44 @@ import java.util.List;
 public class unoGame {
 
     private String id;
+    private String title;
     private List<unoPlayer> gamePlayers;
     private Status gameStatus;
     private unoDeck gameDeck;
     private unoCard dicardPile;
+    private int capcity;
 
     public unoGame() {
-         this.gameDeck = new unoDeck();
+        this.gameDeck = new unoDeck();
     }
 
-    public unoGame(String id, Status gameStatus) {
+    public unoGame(String id, String title, Status gameStatus, int capacity) {
         this.id = id;
+        this.title = title;
         this.gamePlayers = new LinkedList<unoPlayer>();
         this.gameStatus = gameStatus;
         this.gameDeck = new unoDeck();
         this.dicardPile = this.gameDeck.takeCard();
+        this.capcity = capacity;
+    }
+
+    public JsonObject toJson() {
+        JsonObject gameJson = Json.createObjectBuilder()
+                .add("gameId", this.id)
+                .add("gameTitle", this.title)
+                .add("capacity", this.getCapcity())
+                .add("playerAmount", this.getGamePlayers().size())
+                .add("gameStatus", this.getGameStatus().toString())
+                .build();
+        return gameJson;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void addPlayer(unoPlayer player) {
@@ -57,14 +79,6 @@ public class unoGame {
 
     public void changeStatus(Status status) {
         this.gameStatus = status;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public List<unoPlayer> getGamePlayers() {
@@ -97,6 +111,22 @@ public class unoGame {
 
     public void setDicardPile(unoCard dicardPile) {
         this.dicardPile = dicardPile;
+    }
+
+    public int getCapcity() {
+        return capcity;
+    }
+
+    public void setCapcity(int capcity) {
+        this.capcity = capcity;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
 }

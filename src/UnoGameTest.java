@@ -31,9 +31,7 @@ public class UnoGameTest {
       
         unoGame g = new unoGame();
         
-        String id = "ABCDEF01";
-        
-        g.setId(id);
+
         
         List<unoPlayer> players = new ArrayList<unoPlayer>();
         players.add(new unoPlayer("Mitch", "Mitch"));
@@ -52,7 +50,6 @@ public class UnoGameTest {
         unoEngine.initGame(g);
         
         System.out.println("run: ");
-        System.out.println("Id: " + g.getId());
         System.out.println("Discard: card: " + g.getDicardPile());
         System.out.println("Cards on deck: " + g.getGameDeck().getAmount());
         for (unoPlayer p : g.getGamePlayers()) {

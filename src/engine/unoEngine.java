@@ -7,6 +7,7 @@ package engine;
 
 import enums.CardColor;
 import enums.Image;
+import enums.Status;
 import enums.Type;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -74,7 +75,7 @@ public class unoEngine {
             }
         }
         game.setDicardPile(game.getGameDeck().takeCard());
-
+        game.setGameStatus(Status.GAME_START);
         System.out.println(">> Finish Card Dealing");
 
         return game;
